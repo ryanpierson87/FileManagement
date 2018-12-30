@@ -1,1 +1,1 @@
-This repo is to be used to gather the programs written for each stage of collecting, cleaning and analyzing data for my Frasier Project.
+This repo is to be used to eliminate repetitive actions such as downloading a series of files from a webpage or unzipping a series of .zip files from a folder.
