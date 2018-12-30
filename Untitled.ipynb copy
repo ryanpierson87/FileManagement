@@ -1,0 +1,542 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from rarfile import RarFile"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "BadRarFile",
+     "evalue": "Not a RAR file",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mBadRarFile\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-7-889851c1d5dd>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mwith\u001b[0m \u001b[0mRarFile\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"[KB6]_ARP_Axxe.rar\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mrf\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      2\u001b[0m     \u001b[0mrf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mextracall\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/rarfile.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, rarfile, mode, charset, info_callback, crc_check, errors)\u001b[0m\n\u001b[1;32m    664\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mNotImplementedError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"RarFile supports only mode=r\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    665\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 666\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parse\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    667\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    668\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m__enter__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/rarfile.py\u001b[0m in \u001b[0;36m_parse\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    854\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_file_parser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mp5\u001b[0m  \u001b[0;31m# noqa\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    855\u001b[0m         \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 856\u001b[0;31m             \u001b[0;32mraise\u001b[0m \u001b[0mBadRarFile\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Not a RAR file\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    857\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    858\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_file_parser\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mparse\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mBadRarFile\u001b[0m: Not a RAR file"
+     ]
+    }
+   ],
+   "source": [
+    "with RarFile(\"[KB6]_ARP_Axxe.rar\") as rf:\n",
+    "    rf.extracall()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "BadRarFile",
+     "evalue": "Not a RAR file",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mBadRarFile\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-23-ad6048b860bc>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      5\u001b[0m     \u001b[0mrf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mextract_all\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 7\u001b[0;31m \u001b[0munrar\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk/[KB6]_Casio_MT-18.rar\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;32m<ipython-input-23-ad6048b860bc>\u001b[0m in \u001b[0;36munrar\u001b[0;34m(file)\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0munrar\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfile\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m     \u001b[0mrf\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mrarfile\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mRarFile\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfile\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      5\u001b[0m     \u001b[0mrf\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mextract_all\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      6\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/rarfile.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, rarfile, mode, charset, info_callback, crc_check, errors)\u001b[0m\n\u001b[1;32m    664\u001b[0m             \u001b[0;32mraise\u001b[0m \u001b[0mNotImplementedError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"RarFile supports only mode=r\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    665\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 666\u001b[0;31m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parse\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    667\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    668\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0m__enter__\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/site-packages/rarfile.py\u001b[0m in \u001b[0;36m_parse\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    854\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_file_parser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mp5\u001b[0m  \u001b[0;31m# noqa\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    855\u001b[0m         \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 856\u001b[0;31m             \u001b[0;32mraise\u001b[0m \u001b[0mBadRarFile\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Not a RAR file\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    857\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    858\u001b[0m         \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_file_parser\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mparse\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mBadRarFile\u001b[0m: Not a RAR file"
+     ]
+    }
+   ],
+   "source": [
+    "import rarfile\n",
+    "\n",
+    "def unrar(file):\n",
+    "    rf = rarfile.RarFile(file)\n",
+    "    rf.extract_all()\n",
+    "\n",
+    "unrar(\"/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk/[KB6]_Casio_MT-18.rar\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Untitled.ipynb\r\n",
+      "[KB6]_ARP_Axxe.rar\r\n",
+      "[KB6]_Acetone_Rhythm-Ace.rar\r\n",
+      "[KB6]_Acetone_Rhythm-King.rar\r\n",
+      "[KB6]_Acetone_Rhythm-Master.rar\r\n",
+      "[KB6]_AcidLab_Miami.rar\r\n",
+      "[KB6]_Akai_MPC2000.rar\r\n",
+      "[KB6]_Akai_XE8.rar\r\n",
+      "[KB6]_Alesis_HR16A.rar\r\n",
+      "[KB6]_Austin_ARB-6.rar\r\n",
+      "[KB6]_BME_Rattlesnake.rar\r\n",
+      "[KB6]_Bontempi_HF222.rar\r\n",
+      "[KB6]_Casio_CZ-230S.rar\r\n",
+      "[KB6]_Casio_HT-700.rar\r\n",
+      "[KB6]_Casio_MA-101.rar\r\n",
+      "[KB6]_Casio_MT-100.rar\r\n",
+      "[KB6]_Casio_MT-18.rar\r\n",
+      "[KB6]_Casio_MT-500.rar\r\n",
+      "[KB6]_Casio_MT-800.rar\r\n",
+      "[KB6]_Casio_PT-82.rar\r\n",
+      "[KB6]_Casio_RZ1.rar\r\n",
+      "[KB6]_Casio_Rapman-II.rar\r\n",
+      "[KB6]_Casio_Rapman.rar\r\n",
+      "[KB6]_Casio_SA-10.rar\r\n",
+      "[KB6]_Casio_SK1.rar\r\n",
+      "[KB6]_Casio_SK5.rar\r\n",
+      "[KB6]_Chaser_PR-80.rar\r\n",
+      "[KB6]_Cheetah_MD16.rar\r\n",
+      "[KB6]_Cheetah_SpecDrum.rar\r\n",
+      "[KB6]_Clavia_Nord-Drum.rar\r\n",
+      "[KB6]_Coron_Drum-Synce_DS-7.rar\r\n",
+      "[KB6]_Daytone_Drum-Synthe-RDS.rar\r\n",
+      "[KB6]_DeepSky_Drumbox.rar\r\n",
+      "[KB6]_Denon_CRB-90.rar\r\n",
+      "[KB6]_Digitech_RP200.rar\r\n",
+      "[KB6]_DrBoehm_S-78.rar\r\n",
+      "[KB6]_Drumfire_DF-500.rar\r\n",
+      "[KB6]_EKO_MusicBox-12.rar\r\n",
+      "[KB6]_EKO_Ritmo20.rar\r\n",
+      "[KB6]_EMU_E-Drum.rar\r\n",
+      "[KB6]_EMU_Proteus1.rar\r\n",
+      "[KB6]_EMU_Proteus3.rar\r\n",
+      "[KB6]_EMU_SP-12.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-15.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-16.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-32.rar\r\n",
+      "[KB6]_Elka_Drumstar-80.rar\r\n",
+      "[KB6]_Ensoniq_ASR-X.rar\r\n",
+      "[KB6]_Ensoniq_EPS.rar\r\n",
+      "[KB6]_Ensoniq_Mirage.rar\r\n",
+      "[KB6]_Estradin_Pulsar.rar\r\n",
+      "[KB6]_Forat_F-9000.rar\r\n",
+      "[KB6]_Fricke_MFB_301.rar\r\n",
+      "[KB6]_Fricke_MFB_501.rar\r\n",
+      "[KB6]_Fricke_MFB_512.rar\r\n",
+      "[KB6]_Fricke_MFB_712.rar\r\n",
+      "[KB6]_GEM_Drum15.rar\r\n",
+      "[KB6]_Hammond_Auto-Vari64.rar\r\n",
+      "[KB6]_Hammond_Rhythm2.rar\r\n",
+      "[KB6]_Hing-Hon_EK001.rar\r\n",
+      "[KB6]_Jomox_Mbase01.rar\r\n",
+      "[KB6]_Kawai_ACR20.rar\r\n",
+      "[KB6]_Kawai_K1.rar\r\n",
+      "[KB6]_Kawai_R-100.rar\r\n",
+      "[KB6]_Kawai_R-50.rar\r\n",
+      "[KB6]_Kawai_R-50e.rar\r\n",
+      "[KB6]_Kawai_SX-240.rar\r\n",
+      "[KB6]_Kawai_XD-5.rar\r\n",
+      "[KB6]_Kay_DRM1.rar\r\n",
+      "[KB6]_Kay_R8.rar\r\n",
+      "[KB6]_Keio_Checkmate.rar\r\n",
+      "[KB6]_Ketron_SD-5.rar\r\n",
+      "[KB6]_Korg_DDD-1.rar\r\n",
+      "[KB6]_Korg_DDM110.rar\r\n",
+      "[KB6]_Korg_DDM220.rar\r\n",
+      "[KB6]_Korg_DRM-1.rar\r\n",
+      "[KB6]_Korg_KPR77.rar\r\n",
+      "[KB6]_Korg_KR-33.rar\r\n",
+      "[KB6]_Korg_KR-Mini.rar\r\n",
+      "[KB6]_Korg_KR55.rar\r\n",
+      "[KB6]_Korg_MP7.rar\r\n",
+      "[KB6]_Korg_Minipops.rar\r\n",
+      "[KB6]_Korg_PSS-50.rar\r\n",
+      "[KB6]_Korg_ProWave.rar\r\n",
+      "[KB6]_Korg_Prophecy.rar\r\n",
+      "[KB6]_Korg_Radias.rar\r\n",
+      "[KB6]_Korg_SR-120.rar\r\n",
+      "[KB6]_Korg_T1.rar\r\n",
+      "[KB6]_Korg_T3.rar\r\n",
+      "[KB6]_Kurzweil_K2000.rar\r\n",
+      "[KB6]_Lel_PSR.rar\r\n",
+      "[KB6]_Linn_AdrenaLinn1.rar\r\n",
+      "[KB6]_Linn_LM-1.rar\r\n",
+      "[KB6]_MPC-Electronics_The-KIT.rar\r\n",
+      "[KB6]_MSC_DL-909.rar\r\n",
+      "[KB6]_MTI_AO-1.rar\r\n",
+      "[KB6]_MXR_185.rar\r\n",
+      "[KB6]_Maestro_G2.rar\r\n",
+      "[KB6]_Mattel_Electronics_Synsonics_DRM.rar\r\n",
+      "[KB6]_Moog_Modular55.rar\r\n",
+      "[KB6]_Moog_Voyager.rar\r\n",
+      "[KB6]_Nasta_Hit-Stix2.rar\r\n",
+      "[KB6]_Nintendo_Game-Boy-Advance-SP.rar\r\n",
+      "[KB6]_Novation_Bass-Station-2.rar\r\n",
+      "[KB6]_Panasonic_RD-9844.rar\r\n",
+      "[KB6]_Pearl_DRX-1.rar\r\n",
+      "[KB6]_RSF_DD-30.rar\r\n",
+      "[KB6]_Rhodes_Polaris.rar\r\n",
+      "[KB6]_SRB_600.rar\r\n",
+      "[KB6]_Sakata_DPM48.rar\r\n",
+      "[KB6]_SequentialCircuits_Drumtraks.rar\r\n",
+      "[KB6]_SequentialCircuits_Tom.rar\r\n",
+      "[KB6]_Sequential_Circuits_Studio-440.rar\r\n",
+      "[KB6]_Serge_Modular.rar\r\n",
+      "[KB6]_Simmons_ClapTrap.rar\r\n",
+      "[KB6]_Simmons_SDS1000.rar\r\n",
+      "[KB6]_Simmons_SDS200.rar\r\n",
+      "[KB6]_Simmons_SDS2000.rar\r\n",
+      "[KB6]_Simmons_SDS7.rar\r\n",
+      "[KB6]_Solton_Disco-64.rar\r\n",
+      "[KB6]_Sony_DRP-1.rar\r\n",
+      "[KB6]_SoundMaster_SR88.rar\r\n",
+      "[KB6]_SoundMaster_Stix_ST-305.rar\r\n",
+      "[KB6]_Star-Instruments_Synare-PS-1.rar\r\n",
+      "[KB6]_Stylophone_Beatbox.rar\r\n",
+      "[KB6]_Syncussion_Zapp.rar\r\n",
+      "[KB6]_Tama_RockStar.rar\r\n",
+      "[KB6]_Tama_TS-500.rar\r\n",
+      "[KB6]_Technics_AX5.rar\r\n",
+      "[KB6]_Technics_PCM_DP50.rar\r\n",
+      "[KB6]_Technics_U90.rar\r\n",
+      "[KB6]_Teenage-Engineering_PO-12.rar\r\n",
+      "[KB6]_Vermona_DRM1.rar\r\n",
+      "[KB6]_Video-Tech_Rythmic10.rar\r\n",
+      "[KB6]_Visco_Space_Drum.rar\r\n",
+      "[KB6]_Watford-Electronics_Rhythm-Generator.rar\r\n",
+      "[KB6]_Wersi_Prisma-DX5.rar\r\n",
+      "[KB6]_Wiard_300-Series-Modular.rar\r\n",
+      "[KB6]_Wurlitzer_Swinging-Rhythm.rar\r\n",
+      "[KB6]_Yamaha_AN200.rar\r\n",
+      "[KB6]_Yamaha_CS-40M.rar\r\n",
+      "[KB6]_Yamaha_CS15D.rar\r\n",
+      "[KB6]_Yamaha_DD-10.rar\r\n",
+      "[KB6]_Yamaha_DD-11.rar\r\n",
+      "[KB6]_Yamaha_DD-5.rar\r\n",
+      "[KB6]_Yamaha_DD-50.rar\r\n",
+      "[KB6]_Yamaha_PTX8.rar\r\n",
+      "[KB6]_Yamaha_RX-11.rar\r\n",
+      "[KB6]_Yamaha_RX-120.rar\r\n",
+      "[KB6]_Yamaha_RX-21.rar\r\n",
+      "[KB6]_Yamaha_RX-21L.rar\r\n",
+      "[KB6]_Yamaha_RX-5.rar\r\n",
+      "[KB6]_Yamaha_RX15.rar\r\n",
+      "[KB6]_Yamaha_RX17.rar\r\n",
+      "[KB6]_Yamaha_SHS200.rar\r\n",
+      "[KB6]_Yamaha_TX16W_Typhoon-OS.rar\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ls"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "FileNotFoundError",
+     "evalue": "[Errno 2] No such file or directory: 'unrar': 'unrar'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-22-0dda473f3c57>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0msubprocess\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mpath\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m'/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk/[KB6]_Casio_MT-18.rar'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0msubprocess\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mcheck_call\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'unrar'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'x'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mpath\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/subprocess.py\u001b[0m in \u001b[0;36mcheck_call\u001b[0;34m(*popenargs, **kwargs)\u001b[0m\n\u001b[1;32m    321\u001b[0m     \u001b[0mcheck_call\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"ls\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"-l\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    322\u001b[0m     \"\"\"\n\u001b[0;32m--> 323\u001b[0;31m     \u001b[0mretcode\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mcall\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0mpopenargs\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    324\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0mretcode\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    325\u001b[0m         \u001b[0mcmd\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mkwargs\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"args\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/subprocess.py\u001b[0m in \u001b[0;36mcall\u001b[0;34m(timeout, *popenargs, **kwargs)\u001b[0m\n\u001b[1;32m    302\u001b[0m     \u001b[0mretcode\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mcall\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"ls\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"-l\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    303\u001b[0m     \"\"\"\n\u001b[0;32m--> 304\u001b[0;31m     \u001b[0;32mwith\u001b[0m \u001b[0mPopen\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0mpopenargs\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m**\u001b[0m\u001b[0mkwargs\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mp\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    305\u001b[0m         \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    306\u001b[0m             \u001b[0;32mreturn\u001b[0m \u001b[0mp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwait\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtimeout\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mtimeout\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/subprocess.py\u001b[0m in \u001b[0;36m__init__\u001b[0;34m(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, encoding, errors, text)\u001b[0m\n\u001b[1;32m    754\u001b[0m                                 \u001b[0mc2pread\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mc2pwrite\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    755\u001b[0m                                 \u001b[0merrread\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0merrwrite\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 756\u001b[0;31m                                 restore_signals, start_new_session)\n\u001b[0m\u001b[1;32m    757\u001b[0m         \u001b[0;32mexcept\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    758\u001b[0m             \u001b[0;31m# Cleanup if the child failed starting.\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/anaconda3/lib/python3.7/subprocess.py\u001b[0m in \u001b[0;36m_execute_child\u001b[0;34m(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, start_new_session)\u001b[0m\n\u001b[1;32m   1497\u001b[0m                         \u001b[0;32mif\u001b[0m \u001b[0merrno_num\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0merrno\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mENOENT\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1498\u001b[0m                             \u001b[0merr_msg\u001b[0m \u001b[0;34m+=\u001b[0m \u001b[0;34m': '\u001b[0m \u001b[0;34m+\u001b[0m \u001b[0mrepr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merr_filename\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1499\u001b[0;31m                     \u001b[0;32mraise\u001b[0m \u001b[0mchild_exception_type\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merrno_num\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0merr_msg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0merr_filename\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1500\u001b[0m                 \u001b[0;32mraise\u001b[0m \u001b[0mchild_exception_type\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merr_msg\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1501\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: 'unrar': 'unrar'"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "path = '/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk/[KB6]_Casio_MT-18.rar'\n",
+    "subprocess.check_call(['unrar', 'x', path])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'pyunpack'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-14-d2a5edcb610e>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0;32mfrom\u001b[0m \u001b[0mpyunpack\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mArchive\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'pyunpack'"
+     ]
+    }
+   ],
+   "source": [
+    "from pyunpack import Archive"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import tarfile\n",
+    "\n",
+    "tar = tarfile.open('/Users/ryanpierson/Downloads/rarosx-5.6.1.tar.gz', \"r:gz\")\n",
+    "tar.extractall('/Users/ryanpierson/Desktop')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk'"
+      ]
+     },
+     "execution_count": 18,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pwd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Untitled.ipynb\r\n",
+      "[KB6]_ARP_Axxe.rar\r\n",
+      "[KB6]_Acetone_Rhythm-Ace.rar\r\n",
+      "[KB6]_Acetone_Rhythm-King.rar\r\n",
+      "[KB6]_Acetone_Rhythm-Master.rar\r\n",
+      "[KB6]_AcidLab_Miami.rar\r\n",
+      "[KB6]_Akai_MPC2000.rar\r\n",
+      "[KB6]_Akai_XE8.rar\r\n",
+      "[KB6]_Alesis_HR16A.rar\r\n",
+      "[KB6]_Austin_ARB-6.rar\r\n",
+      "[KB6]_BME_Rattlesnake.rar\r\n",
+      "[KB6]_Bontempi_HF222.rar\r\n",
+      "[KB6]_Casio_CZ-230S.rar\r\n",
+      "[KB6]_Casio_HT-700.rar\r\n",
+      "[KB6]_Casio_MA-101.rar\r\n",
+      "[KB6]_Casio_MT-100.rar\r\n",
+      "[KB6]_Casio_MT-18.rar\r\n",
+      "[KB6]_Casio_MT-500.rar\r\n",
+      "[KB6]_Casio_MT-800.rar\r\n",
+      "[KB6]_Casio_PT-82.rar\r\n",
+      "[KB6]_Casio_RZ1.rar\r\n",
+      "[KB6]_Casio_Rapman-II.rar\r\n",
+      "[KB6]_Casio_Rapman.rar\r\n",
+      "[KB6]_Casio_SA-10.rar\r\n",
+      "[KB6]_Casio_SK1.rar\r\n",
+      "[KB6]_Casio_SK5.rar\r\n",
+      "[KB6]_Chaser_PR-80.rar\r\n",
+      "[KB6]_Cheetah_MD16.rar\r\n",
+      "[KB6]_Cheetah_SpecDrum.rar\r\n",
+      "[KB6]_Clavia_Nord-Drum.rar\r\n",
+      "[KB6]_Coron_Drum-Synce_DS-7.rar\r\n",
+      "[KB6]_Daytone_Drum-Synthe-RDS.rar\r\n",
+      "[KB6]_DeepSky_Drumbox.rar\r\n",
+      "[KB6]_Denon_CRB-90.rar\r\n",
+      "[KB6]_Digitech_RP200.rar\r\n",
+      "[KB6]_DrBoehm_S-78.rar\r\n",
+      "[KB6]_Drumfire_DF-500.rar\r\n",
+      "[KB6]_EKO_MusicBox-12.rar\r\n",
+      "[KB6]_EKO_Ritmo20.rar\r\n",
+      "[KB6]_EMU_E-Drum.rar\r\n",
+      "[KB6]_EMU_Proteus1.rar\r\n",
+      "[KB6]_EMU_Proteus3.rar\r\n",
+      "[KB6]_EMU_SP-12.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-15.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-16.rar\r\n",
+      "[KB6]_Electro-Harmonix_DRM-32.rar\r\n",
+      "[KB6]_Elka_Drumstar-80.rar\r\n",
+      "[KB6]_Ensoniq_ASR-X.rar\r\n",
+      "[KB6]_Ensoniq_EPS.rar\r\n",
+      "[KB6]_Ensoniq_Mirage.rar\r\n",
+      "[KB6]_Estradin_Pulsar.rar\r\n",
+      "[KB6]_Forat_F-9000.rar\r\n",
+      "[KB6]_Fricke_MFB_301.rar\r\n",
+      "[KB6]_Fricke_MFB_501.rar\r\n",
+      "[KB6]_Fricke_MFB_512.rar\r\n",
+      "[KB6]_Fricke_MFB_712.rar\r\n",
+      "[KB6]_GEM_Drum15.rar\r\n",
+      "[KB6]_Hammond_Auto-Vari64.rar\r\n",
+      "[KB6]_Hammond_Rhythm2.rar\r\n",
+      "[KB6]_Hing-Hon_EK001.rar\r\n",
+      "[KB6]_Jomox_Mbase01.rar\r\n",
+      "[KB6]_Kawai_ACR20.rar\r\n",
+      "[KB6]_Kawai_K1.rar\r\n",
+      "[KB6]_Kawai_R-100.rar\r\n",
+      "[KB6]_Kawai_R-50.rar\r\n",
+      "[KB6]_Kawai_R-50e.rar\r\n",
+      "[KB6]_Kawai_SX-240.rar\r\n",
+      "[KB6]_Kawai_XD-5.rar\r\n",
+      "[KB6]_Kay_DRM1.rar\r\n",
+      "[KB6]_Kay_R8.rar\r\n",
+      "[KB6]_Keio_Checkmate.rar\r\n",
+      "[KB6]_Ketron_SD-5.rar\r\n",
+      "[KB6]_Korg_DDD-1.rar\r\n",
+      "[KB6]_Korg_DDM110.rar\r\n",
+      "[KB6]_Korg_DDM220.rar\r\n",
+      "[KB6]_Korg_DRM-1.rar\r\n",
+      "[KB6]_Korg_KPR77.rar\r\n",
+      "[KB6]_Korg_KR-33.rar\r\n",
+      "[KB6]_Korg_KR-Mini.rar\r\n",
+      "[KB6]_Korg_KR55.rar\r\n",
+      "[KB6]_Korg_MP7.rar\r\n",
+      "[KB6]_Korg_Minipops.rar\r\n",
+      "[KB6]_Korg_PSS-50.rar\r\n",
+      "[KB6]_Korg_ProWave.rar\r\n",
+      "[KB6]_Korg_Prophecy.rar\r\n",
+      "[KB6]_Korg_Radias.rar\r\n",
+      "[KB6]_Korg_SR-120.rar\r\n",
+      "[KB6]_Korg_T1.rar\r\n",
+      "[KB6]_Korg_T3.rar\r\n",
+      "[KB6]_Kurzweil_K2000.rar\r\n",
+      "[KB6]_Lel_PSR.rar\r\n",
+      "[KB6]_Linn_AdrenaLinn1.rar\r\n",
+      "[KB6]_Linn_LM-1.rar\r\n",
+      "[KB6]_MPC-Electronics_The-KIT.rar\r\n",
+      "[KB6]_MSC_DL-909.rar\r\n",
+      "[KB6]_MTI_AO-1.rar\r\n",
+      "[KB6]_MXR_185.rar\r\n",
+      "[KB6]_Maestro_G2.rar\r\n",
+      "[KB6]_Mattel_Electronics_Synsonics_DRM.rar\r\n",
+      "[KB6]_Moog_Modular55.rar\r\n",
+      "[KB6]_Moog_Voyager.rar\r\n",
+      "[KB6]_Nasta_Hit-Stix2.rar\r\n",
+      "[KB6]_Nintendo_Game-Boy-Advance-SP.rar\r\n",
+      "[KB6]_Novation_Bass-Station-2.rar\r\n",
+      "[KB6]_Panasonic_RD-9844.rar\r\n",
+      "[KB6]_Pearl_DRX-1.rar\r\n",
+      "[KB6]_RSF_DD-30.rar\r\n",
+      "[KB6]_Rhodes_Polaris.rar\r\n",
+      "[KB6]_SRB_600.rar\r\n",
+      "[KB6]_Sakata_DPM48.rar\r\n",
+      "[KB6]_SequentialCircuits_Drumtraks.rar\r\n",
+      "[KB6]_SequentialCircuits_Tom.rar\r\n",
+      "[KB6]_Sequential_Circuits_Studio-440.rar\r\n",
+      "[KB6]_Serge_Modular.rar\r\n",
+      "[KB6]_Simmons_ClapTrap.rar\r\n",
+      "[KB6]_Simmons_SDS1000.rar\r\n",
+      "[KB6]_Simmons_SDS200.rar\r\n",
+      "[KB6]_Simmons_SDS2000.rar\r\n",
+      "[KB6]_Simmons_SDS7.rar\r\n",
+      "[KB6]_Solton_Disco-64.rar\r\n",
+      "[KB6]_Sony_DRP-1.rar\r\n",
+      "[KB6]_SoundMaster_SR88.rar\r\n",
+      "[KB6]_SoundMaster_Stix_ST-305.rar\r\n",
+      "[KB6]_Star-Instruments_Synare-PS-1.rar\r\n",
+      "[KB6]_Stylophone_Beatbox.rar\r\n",
+      "[KB6]_Syncussion_Zapp.rar\r\n",
+      "[KB6]_Tama_RockStar.rar\r\n",
+      "[KB6]_Tama_TS-500.rar\r\n",
+      "[KB6]_Technics_AX5.rar\r\n",
+      "[KB6]_Technics_PCM_DP50.rar\r\n",
+      "[KB6]_Technics_U90.rar\r\n",
+      "[KB6]_Teenage-Engineering_PO-12.rar\r\n",
+      "[KB6]_Vermona_DRM1.rar\r\n",
+      "[KB6]_Video-Tech_Rythmic10.rar\r\n",
+      "[KB6]_Visco_Space_Drum.rar\r\n",
+      "[KB6]_Watford-Electronics_Rhythm-Generator.rar\r\n",
+      "[KB6]_Wersi_Prisma-DX5.rar\r\n",
+      "[KB6]_Wiard_300-Series-Modular.rar\r\n",
+      "[KB6]_Wurlitzer_Swinging-Rhythm.rar\r\n",
+      "[KB6]_Yamaha_AN200.rar\r\n",
+      "[KB6]_Yamaha_CS-40M.rar\r\n",
+      "[KB6]_Yamaha_CS15D.rar\r\n",
+      "[KB6]_Yamaha_DD-10.rar\r\n",
+      "[KB6]_Yamaha_DD-11.rar\r\n",
+      "[KB6]_Yamaha_DD-5.rar\r\n",
+      "[KB6]_Yamaha_DD-50.rar\r\n",
+      "[KB6]_Yamaha_PTX8.rar\r\n",
+      "[KB6]_Yamaha_RX-11.rar\r\n",
+      "[KB6]_Yamaha_RX-120.rar\r\n",
+      "[KB6]_Yamaha_RX-21.rar\r\n",
+      "[KB6]_Yamaha_RX-21L.rar\r\n",
+      "[KB6]_Yamaha_RX-5.rar\r\n",
+      "[KB6]_Yamaha_RX15.rar\r\n",
+      "[KB6]_Yamaha_RX17.rar\r\n",
+      "[KB6]_Yamaha_SHS200.rar\r\n",
+      "[KB6]_Yamaha_TX16W_Typhoon-OS.rar\r\n",
+      "\u001b[34mrar\u001b[m\u001b[m/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ls"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'/Users/ryanpierson/Desktop/drum_samples/hfiehhwodwcnsjdcnsk'"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pwd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
